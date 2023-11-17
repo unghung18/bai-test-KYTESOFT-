@@ -1,0 +1,211 @@
+@use '../scss/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+input,
+select {
+    border: none;
+    outline: none;
+
+}
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.App {
+    position: relative;
+
+    .container {
+
+        &.blur {
+            filter: blur(20px);
+        }
+
+        section {
+            text-align: center;
+            max-width: 1245px;
+            margin: 0 auto;
+            padding: 0 90px;
+
+            @include tablet {
+                padding: 0 30px;
+            }
+
+            .section-header {
+                margin: 70px 0 50px !important;
+
+                h2 {
+                    font-size: 36px;
+                    font-weight: 700;
+                }
+
+                div {
+                    color: #8D9199;
+                    font-size: 15px;
+                }
+
+
+                @include tablet {
+                    margin: 40px 0 !important;
+                }
+            }
+
+            .section-content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+
+                &.grid-4 {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                @include mobile {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                .feature {
+                    margin-bottom: 40px;
+
+                    img {
+                        width: 140px;
+                        height: 140px;
+                    }
+
+                    h4 {
+                        padding-top: 20px;
+                        font-size: 20px;
+                        font-weight: 800;
+                    }
+
+                    p {
+                        padding: 10px 0 20px;
+                        font-size: 15px;
+                        color: #222222;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        z-index: 999;
+        transition: all 0.2s ease;
+        background-color: transparent;
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+
+
+        &__left {
+            flex: 1;
+        }
+
+        &.showMenu {
+            width: 100%;
+            opacity: 1;
+            visibility: visible;
+
+            .mobile-menu__right {
+                width: 360px;
+                visibility: visible;
+                opacity: 1;
+
+                @include mobile {
+                    width: 270px;
+                }
+
+            }
+        }
+
+        &__right {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 35px 40px;
+            background: rgba(255, 255, 255, .85);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            color: #000;
+            transition: all 0.2s ease;
+            height: 100%;
+            z-index: 999;
+            width: 0;
+            visibility: hidden;
+            opacity: 0;
+            overflow-y: auto;
+
+            .close-icon {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                background-color: #FF4A52;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 8px 8px -6px rgba(0, 0, 0, .15);
+                transition: all 0.1s ease;
+                @include flex(center, center);
+
+                &:hover {
+                    margin-top: -4px;
+                }
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    color: #fff;
+                }
+            }
+
+            &-content {
+                margin-top: 60px;
+                margin-bottom: 40px;
+
+                &-item {
+                    a {
+                        display: block;
+                        font-size: 24px;
+                        padding: 6px 0;
+                        color: #000;
+                        font-weight: 800;
+                        transition: color .2s linear, background .1s linear;
+
+                        &:hover {
+                            color: #FF4A52;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@use '../../scss/' as *;
+
+.footer {
+    margin-top: 70px;
+    background-color: #000;
+    color: #fff;
+    padding: 50px 0;
+
+    &__widgets {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1245px;
+        margin: 0 auto;
+        padding: 0 90px;
+
+        @include tablet {
+            gap: 20px;
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+
+        }
+
+
+        @include tablet {
+            padding: 0 30px;
+        }
+
+        &-item {
+
+            &-title {
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            p {
+                padding: 8px 0;
+                font-size: 15px;
+                color: #CCCCCC;
+                font-weight: 200;
+
+                svg {
+                    width: 17px;
+                    height: 17px;
+                    margin-right: 6px;
+                }
+            }
+
+            &-awards-img {
+                width: 246px;
+                height: 113px;
+                margin-top: 30px;
+            }
+
+            &-recent-trip {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 7px;
+
+                li {
+                    border-radius: 5px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: auto 75 / 75;
+                    }
+                }
+            }
+        }
+    }
+
+    &-bar {
+        text-align: center;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid #444;
+    }
+}

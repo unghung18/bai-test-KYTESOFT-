@@ -1,0 +1,79 @@
+@use '../../scss/' as *;
+
+.trip-card {
+    border: 1px solid #dce0e0;
+    cursor: pointer;
+    transition: all 0.2s;
+    height: min-content;
+
+    &-top {
+        position: relative;
+    }
+
+    &-img {
+        border-radius: 5px;
+        height: 100%;
+    }
+
+    &-price {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        color: #fff;
+        padding: 3px 10px;
+        background-color: #FF4A52;
+        font-weight: 700;
+        font-size: 15px;
+        transition: all 0.2s;
+    }
+
+    &-info {
+        padding: 5px 15px 15px;
+        text-align: start;
+
+        h4 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 13px;
+            padding: 9px 0 17px;
+            color: #222222;
+        }
+
+        &-attribute {
+            @include flex(space-between, center);
+            font-size: 12px;
+
+            &-rating {
+                display: flex;
+                flex-wrap: wrap;
+
+                &:last-child {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        -webkit-transform: translateY(-4px);
+        -moz-transform: translateY(-4px);
+        -o-transform: translateY(-4px);
+        -ms-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -webkit-box-shadow: 0 22px 40px rgba(0, 0, 0, .15);
+        -moz-box-shadow: 0 22px 40px rgba(0, 0, 0, .15);
+        box-shadow: 0 22px 40px rgba(0, 0, 0, .15);
+
+        .trip-card-price {
+            left: 5px;
+            z-index: 10;
+            -ms-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+    }
+}

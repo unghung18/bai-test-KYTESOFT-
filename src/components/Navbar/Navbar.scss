@@ -1,0 +1,181 @@
+@use '../../scss/' as *;
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    height: 74px;
+
+    .header-bg {
+        transition: all 0.5s;
+
+        &.scrollTop {
+            opacity: 1;
+            background-color: transparent;
+        }
+
+        &.scrollUp {
+            background-color: #ffffff !important;
+
+            .logo {
+                width: 92px;
+                background-image: url("../../assets/logo-black.png") !important;
+            }
+        }
+
+        &.scrollUp * {
+            color: #000 !important;
+        }
+
+        &.scrollDown {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+    }
+
+    &__container {
+
+        max-width: 1245px;
+        margin: 0 auto;
+        @include flex(space-between, center);
+        padding: 0 50px;
+
+        .logo {
+            width: 92px;
+            height: 22px;
+            background-size: cover;
+            background-image: url("../../assets/logo.png");
+        }
+
+        @include tablet {
+            padding: 30px;
+        }
+
+
+        &__left {
+            display: flex;
+            align-items: center;
+
+            .nav {
+                list-style: none;
+
+                @include tablet {
+                    display: none;
+                }
+
+                &__item {
+                    display: inline-block;
+                    position: relative;
+
+                    &-link {
+                        color: #fff;
+                        margin-right: 5px;
+                        padding: 26px 17px 26px 0;
+                        @include flex(center, center);
+                        text-decoration: none;
+
+                        @include bp-nav {
+                            padding: 26px 15px 26px 0;
+                        }
+
+
+                        span {
+                            font-size: 13px;
+                        }
+
+                        .down-icon {
+                            color: white;
+                            width: 13px;
+                            height: 100%;
+                            margin-left: 8px;
+                            font-weight: 800;
+                        }
+                    }
+
+                    .submenu {
+                        position: absolute;
+                        opacity: 0;
+                        top: 98%;
+                        left: -20px;
+                        border-radius: 5px;
+                        background-color: #fff;
+                        min-width: 240px;
+                        padding: 0 20px;
+                        list-style: none;
+                        box-shadow: 0 5px 40px rgba(0, 0, 0, .15);
+                        transform: scale(0.8);
+                        transition: all 0.1s ease-out;
+                        visibility: hidden;
+
+                        li {
+                            display: block;
+
+                            a {
+                                padding: 10px 0;
+                                color: #000;
+                                text-align: start;
+                                display: block;
+                                text-decoration: none;
+                                font-size: 13px;
+                                font-weight: 600;
+                                transition: color .2s linear, background .2s linear;
+
+                                &:hover {
+                                    color: #FF4A52;
+                                }
+                            }
+
+                        }
+                    }
+
+                    &:hover {
+                        .submenu {
+                            opacity: 1;
+                            transform: scale(1);
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+
+            .menu-icon {
+                width: 20px;
+                height: 20px;
+                color: white;
+                cursor: pointer;
+            }
+
+            &-cart {
+                @include flex(center, center);
+                position: relative;
+                margin-left: 7px;
+
+                span {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    background-color: #FF4A52;
+                    border-radius: 50%;
+                    top: -10px;
+                    right: -10px;
+                    color: white;
+                    font-size: 10px;
+                    @include flex(center, center);
+                }
+
+                .cart-icon {
+                    width: 20px;
+                    height: 20px;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+
+}

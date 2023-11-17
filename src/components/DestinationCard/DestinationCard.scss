@@ -1,0 +1,38 @@
+@use '../../scss/' as *;
+
+.destination-card {
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    @include tablet {
+        height: 180px;
+    }
+
+    .destination-card-img {
+        object-fit: cover;
+        filter: brightness(80%);
+    }
+
+    h2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 5px 15px 15px;
+        color: #fff;
+        font-weight: 900;
+    }
+
+    &:hover {
+        -moz-transform: translateY(-4px);
+        -o-transform: translateY(-4px);
+        -ms-transform: translateY(-4px);
+        transform: translateY(-4px);
+        -webkit-box-shadow: 0 22px 40px rgba(0, 0, 0, .15);
+        -moz-box-shadow: 0 22px 40px rgba(0, 0, 0, .15);
+        box-shadow: 0 22px 40px rgba(0, 0, 0, .15);
+    }
+}
