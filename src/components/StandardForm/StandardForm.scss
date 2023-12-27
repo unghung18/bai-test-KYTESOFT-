@@ -1,0 +1,90 @@
+@use '../../scss/' as *;
+
+.standard__form {
+    padding: 20px 20px 0;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &-item {
+            background-color: white;
+            border-radius: 5px;
+            padding: 0 10px;
+            @include flex(space-between, center);
+            min-width: 123px;
+            margin-bottom: 17px;
+
+            @include mobile {
+                width: 100%;
+            }
+
+            &.search-btn-div {
+                background-color: #FF4A52;
+
+                &:hover {
+                    background-color: #1EC6B6;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-right: 17px;
+            }
+
+            input {
+                flex: 1;
+                padding: 10px 0;
+                background-color: transparent;
+                color: #555555;
+                overflow: hidden;
+            }
+
+            .search-icon,
+            .calendar-icon,
+            .sort-icon,
+            .arrow-down-icon,
+            .usd-icon {
+                color: #000;
+                width: 15px;
+                opacity: 0.5;
+                height: 15px;
+                cursor: pointer;
+            }
+
+
+            select {
+                padding: 10px 20px 10px 10px;
+                width: calc(100% - 30px);
+                color: #555555;
+                overflow: hidden !important;
+            }
+
+            .search-btn {
+                padding: 10px 22.5px;
+                color: #fff;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-search-toggle {
+        text-align: start;
+        cursor: pointer;
+
+        @include flex(flex-start, center);
+
+        span {
+            font-size: 13px;
+        }
+
+        .advanced-search-icon {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}

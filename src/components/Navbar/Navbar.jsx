@@ -28,14 +28,6 @@ const Navbar = () => {
                 headerRef.current.classList.remove('scrollTop');
             }
             oldScrollY = window.scrollY;
-            /*  if (window.scrollY == 0) {
-                 headerRef.current.classList.add('scrollTop');
-                 headerRef.current.classList.remove('scrollDown');
-             }
-             else if (window.scrollY >= 200) {
-                 headerRef.current.classList.remove('scrollTop');
-                 headerRef.current.classList.add('scrollDown');
-             } */
         };
 
         document.addEventListener('scroll', handleScroll);
@@ -76,7 +68,7 @@ const Navbar = () => {
                                 </ul>
                             </li>
                             <li className='nav__item'>
-                                <a className='nav__item-link' href="/">
+                                <a className='nav__item-link' href="/tour">
                                     <span>Tours</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="down-icon">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
